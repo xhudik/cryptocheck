@@ -2,5 +2,5 @@
 *
 
 # with exception of:
-!cryptocheck.py
+!cryptocheck.*
 !.gitignore

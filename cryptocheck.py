@@ -7,7 +7,7 @@ from dominate.tags import *
 #import pandas as pd
 #import numpy as np
 import re
-from time import gmtime, strftime
+from time import strftime
 import time
 
 
@@ -32,12 +32,10 @@ def getGraph(TVurl):
 	time.sleep(2)
 	try:
 		button3m  = driver.find_element_by_xpath("//div[1]/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[4]")
-		print(button3m.is_enabled(),button3m.is_displayed())
 		button3m.click()
 	except Exception as e:
 		print(e)
-	#button3m  = driver.find_element_by_xpath("//div[1]/div/div[2]/div[2]/div[1]/div/div[2]/div/div/div[4]")
-	#button3m.click()
+
 	graph  = driver.find_element_by_xpath("//div[5]/div/div/div/div/div/div[1]/div")
 	return graph
 
@@ -59,7 +57,7 @@ driver.quit()
 
 doc = document(title='BTC-TrView')
 with doc:
-	h1(f"TradingView Prices, {strftime('%Y-%m-%d %H:%M', gmtime())}")
+	h1(f"TradingView Prices, {strftime('%Y-%m-%d %H:%M')}")
 	a(img(src='screenshotBTCEUR.png'), target="_blank", href="https://www.tradingview.com/symbols/BTCEUR/?exchange=BINANCE") 
 	hr()
 	a(img(src='screenshotBNBEUR.png'), target="_blank", href="https://www.tradingview.com/symbols/BNBEUR/?exchange=BINANCE") 
