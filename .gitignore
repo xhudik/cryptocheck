@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# with exception of:
+!cryptocheck.py
+!.gitignore
