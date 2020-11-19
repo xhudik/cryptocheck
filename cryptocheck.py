@@ -1,12 +1,8 @@
 #!/usr/bin/env python 
 
 from selenium import webdriver
-# from selenium.webdriver.common.keys import Keys
 from dominate import document
 from dominate.tags import *
-# import pandas as pd
-# import numpy as np
-# import re
 from time import strftime
 import time
 
@@ -17,14 +13,13 @@ import time
 def highlight(element):
     """Highlights (blinks) a Selenium Webdriver element"""
     drivera = element._parent
-
     def apply_style(s):
         drivera.execute_script("arguments[0].setAttribute('style', arguments[1]);",
                                element, s)
 
     original_style = element.get_attribute('style')
     apply_style("background: yellow; border: 2px solid red;")
-    time.sleep(.3)
+    time.sleep(.8)
     apply_style(original_style)
 
 
@@ -64,9 +59,14 @@ btceur.screenshot("screenshotBTCEUR.png")
 bnbeur = getGraph("https://www.tradingview.com/symbols/BNBEUR/?exchange=BINANCE")
 bnbeur.screenshot("screenshotBNBEUR.png")
 
-# bnbbtcdriver.get(
+# bnbbtc
 bnbbtc = getGraph("https://www.tradingview.com/symbols/BNBBTC/?exchange=BINANCE")
 bnbbtc.screenshot("screenshotBNBBTC.png")
+
+# etheur
+etheur = getGraph("https://www.tradingview.com/symbols/ETHEUR/?exchange=BINANCE")
+etheur.screenshot("screenshotETHEUR.png")
+
 
 driver.quit()
 
@@ -76,9 +76,15 @@ with doc:
     a(img(src='screenshotBTCEUR.png'), target="_blank",
       href="https://www.tradingview.com/symbols/BTCEUR/?exchange=BINANCE")
     hr()
+
     a(img(src='screenshotBNBEUR.png'), target="_blank",
       href="https://www.tradingview.com/symbols/BNBEUR/?exchange=BINANCE")
     hr()
+
+    a(img(src='screenshotETHEUR.png'), target="_blank",
+      href="https://www.tradingview.com/symbols/ETHEUR/?exchange=BINANCE")
+    hr()
+
     a(img(src='screenshotBNBBTC.png'), target="_blank",
       href="https://www.tradingview.com/symbols/BNBBTC/?exchange=BINANCE")
 
