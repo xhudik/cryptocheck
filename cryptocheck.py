@@ -64,8 +64,8 @@ bnbbtc = getGraph("https://www.tradingview.com/symbols/BNBBTC/?exchange=BINANCE"
 bnbbtc.screenshot("screenshotBNBBTC.png")
 
 # etheur
-etheur = getGraph("https://www.tradingview.com/symbols/ETHEUR/?exchange=BINANCE")
-etheur.screenshot("screenshotETHEUR.png")
+xmreur = getGraph("https://www.tradingview.com/symbols/XMREUR/?exchange=KRAKEN")
+xmreur.screenshot("screenshotXMREUR.png")
 
 
 driver.quit()
@@ -81,8 +81,8 @@ with doc:
       href="https://www.tradingview.com/symbols/BNBEUR/?exchange=BINANCE")
     hr()
 
-    a(img(src='screenshotETHEUR.png'), target="_blank",
-      href="https://www.tradingview.com/symbols/ETHEUR/?exchange=BINANCE")
+    a(img(src='screenshotXMREUR.png'), target="_blank",
+      href="https://www.tradingview.com/symbols/XMREUR/?exchange=KRAKEN")
     hr()
 
     a(img(src='screenshotBNBBTC.png'), target="_blank",

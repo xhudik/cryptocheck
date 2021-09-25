@@ -4,3 +4,6 @@
 # with exception of:
 !cryptocheck.*
 !.gitignore
+!pyvenv.cfg
+!README.md
+!stocks.html
